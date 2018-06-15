@@ -1,0 +1,27 @@
+h2 {
+    font-size:14pt;
+    text-align: left;
+    
+}
+
+li{
+    text-align: left;
+}
+
+.right {
+    color:green;
+}
+
+.wrong {
+    color:red;
+}
+
+li.selected {
+    background-color: #BBD8DC !important;
+    color: white;
+}
+
+.score{
+    color:green;
+    font-size:26pt;
+}

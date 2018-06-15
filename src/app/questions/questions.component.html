@@ -1,0 +1,28 @@
+
+
+<div *ngIf="commited">
+  <label class="score">
+    {{score}}
+  </label>
+</div>
+<div style="text-align:left; ">  
+  <input type="button"  value="提交" (click)="commit()">
+  <label>{{done}}/4</label>
+</div>
+
+
+<div *ngFor="let i of filtered;let idx=index;">
+
+  <h2 [class.wrong]="commited && (i.A!=i.U)"> {{idx+1}}.{{i.Q}}</h2>
+  <ul>
+    <li *ngFor="let c of i.C;"   
+        [class.right]=" commited && c===i.A"
+        [class.selected]=" c === i.U"
+        (click)="checkAnswer(c,idx)"
+    >
+     {{c}}
+    </li>
+  </ul>
+
+</div>
+
