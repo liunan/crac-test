@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CRAC自测';
+  title = 'CRAC;业余无线电考试；模拟考试；自测';
 }

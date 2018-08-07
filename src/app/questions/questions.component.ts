@@ -17,16 +17,18 @@ export class QuestionsComponent implements OnInit {
   commited:boolean;
   done:number;
   score:number;
+  total:number;
   
   constructor() {
     this.commited = false;
     this.done = 0;
     this.score = 0;
+    this.total = 30;
 
    }
 
   ngOnInit() {        
-    while(this.filtered.length<4)
+    while(this.filtered.length<this.total)
     {
       let idx =Math.floor(Math.random()*(this.questions.length+1));
       let item = this.questions[idx];
@@ -45,15 +47,14 @@ export class QuestionsComponent implements OnInit {
     if(this.filtered[idx].U == undefined)
       ++this.done;
 
-    console.log(`${idx}:${answer}`);
+    //console.log(`${idx}:${answer}`);
     this.filtered[idx].U = answer;  
   }
 
   commit():void{
     this.score=0;
     for(let item in this.filtered)
-    {  
-      console.log(item);    
+    {        
       if(this.filtered[item].A === this.filtered[item].U)
         ++this.score;
     }
